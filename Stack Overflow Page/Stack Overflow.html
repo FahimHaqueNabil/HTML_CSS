@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stack Overflow</title>
+    </head>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .top{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            border: 1px solid lightgray;
+            background-color: rgb(236, 236, 236);
+            box-shadow: 0px 1px 10px lightgray;
+            height: 50px;
+            margin-top: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .top .logo{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px;
+            margin-left: 30px;
+        }
+        .top .logo span{
+            margin-left: 5px;
+            font-family: Bahnschrift Light;
+            font-size: 22px;
+        }
+        .top .mid{
+            display: flex;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            color: gray;
+            align-items: center;
+        }
+        .top .mid span{
+            margin: 30px;
+        }
+        .top .search{
+            display: flex;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            margin: 5px 0px 5px 5px;
+            padding-left: 10px;
+            width: 1100px;
+            border: 1px solid lightgray;
+            background-color: white;
+            border-radius: 5px;
+            
+            
+        }
+        .top .search span{
+            color: gray;
+            opacity: .5;
+            margin-left: 10px;
+        }
+        .top .login{
+            display: flex;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            color: rgb(28, 167, 231);
+            border: 1px solid rgb(28, 167, 231);
+            margin-left: 20px;
+            margin-bottom: 8px;
+            margin-top: 8px;
+            margin-right: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 5px;
+            background-color: rgb(199, 223, 240);
+        }
+        .top .signup{
+            display: flex;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            color: white;
+            border: 1px solid rgb(28, 167, 231);
+            
+            margin-bottom: 8px;
+            margin-top: 8px;
+            margin-right: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 5px;
+            background-color: rgb(28, 167, 231);
+        }
+
+        .left{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            color: gray;
+            border-right: 1px solid lightgray;
+            width: 200px;
+            margin-left: 50px;
+            padding-top: 20px;
+            
+        }
+        .left .first{
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        .left .ques{
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            border:1px solid rgb(236, 236, 236);
+            background-color: lightgray;
+            margin: 5px 0px 15px -5px;
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-right: 3px solid orange;
+        }
+        .left .ques span{
+            margin-left: 8px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            color: black;
+        }
+        .left .sec{
+            padding-left: 30px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #col{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .star{
+            display: flex;
+            align-items: center;
+            margin-top: -10px;
+
+        }
+        .star span{
+            padding-left: 5px;
+        }
+        .left .last span{
+            font-weight: bold;
+            color: black;
+        }
+        .left .last{
+            border: 1px solid lightgray;
+            border-right: 0px solid transparent;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 10px;
+        }
+        #last, #last_last{
+            text-align: center;
+        }
+        #last{
+            border: 1px solid rgb(28, 167, 231);
+            border-radius: 5px;
+            margin: 5px 10px 5px 10px;
+            padding: 8px;
+            background-color: rgb(28, 167, 231);
+            color: white;
+        }
+        #last_last{
+            padding: 10px;
+        }
+        .top_mid{
+            display: flex;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: -750px;
+            margin-left: 300px;
+            margin-right: 90px;
+            height: 50px;
+            justify-content: space-between;
+
+        }
+        .top_mid h1{
+            font-weight: normal;
+        }
+        .top_mid .qs{
+            border: 1px solid rgb(28, 167, 231);
+            border-radius: 5px;
+            padding: 8px;
+            background-color: rgb(28, 167, 231);
+            color: white;
+        }
+        .m_mid{
+            display: flex;
+            align-items: center;
+            margin-left: 300px;
+            margin-top: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+        .m_mid span{
+            color: gray;
+        }
+        .bb{
+            margin-left: 15px;
+        }
+        .m_mid + hr{
+            opacity: .5;
+            color: gray;
+            margin-left: 300px;
+            margin-right: 90px;
+            margin-top: 15px;
+            
+        }
+        .mid_left{
+            display: flex;
+            align-items: center;
+            margin-left: 300px;
+            margin-top: 20px;
+            width: 150px;
+        }
+        .mid_m{
+            display: flex;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            margin-left: 380px;
+            margin-top: -160px;
+            margin-right: 700px;
+        }
+        .mid_l{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 380px;
+            margin-top: 20px;
+            margin-right: 700px;
+            font-family: Consolas;
+            font-size: 14px;
+            border: 1px solid rgb(236, 236, 236);
+            background-color: rgb(236, 236, 236);
+            border-radius: 5px 5px 0px 0px;
+            padding-left: 8px;
+            padding-top: 10px;
+            height: 200px;
+            
+        }
+        .mid_l .d{
+            color: rgb(219, 155, 35);
+        }
+        .mid_l .v{
+            color: blue;
+        }
+        .mid_l .data{
+            color: rgb(45, 156, 45);
+        }
+        .mid_l .c20{
+            margin-left: 20px;
+        }
+        .mid_l .c40{
+            margin-left: 40px;
+        }
+        .mid_l .c60{
+            margin-left: 60px;
+        }
+        .mid_last{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-family: Arial;
+            font-size: 15px;
+            margin-left: 380px;
+            margin-top: 20px;
+            margin-right: 700px;
+        }
+        .mid_last .dd{
+            background-color: lightgray;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+        .right{
+            display: flex;
+            align-items: flex-start;
+            margin-left: 1400px;
+            margin-top: -350px;
+            width: 315px;
+            border: 1px solid rgb(249, 238, 193);
+            background-color: rgb(252, 245, 217);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            padding: 10px;
+            color: gray;
+            font-weight: bold;
+            height: 20px;
+        }
+        .tic_1{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 1400px;
+            margin-top: 0px;
+            width: 335px;
+            background-color: rgb(253, 250, 236);
+            border-left: 1px solid rgb(249, 238, 193);
+            border-right: 1px solid rgb(249, 238, 193);
+           
+        }
+        .tic_1 div{
+            padding-left: 10px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+        }
+        .tic_2{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 1400px;
+            margin-top: 0px;
+            width: 335px;
+            background-color: rgb(253, 250, 236);
+            border-left: 1px solid rgb(249, 238, 193);
+            border-right: 1px solid rgb(249, 238, 193);
+        }
+        .tic_2 div{
+            padding-left: 10px;
+            padding-top: 0px;
+            padding-bottom: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+        }
+        .fea{
+            display: flex;
+            align-items: flex-start;
+            margin-left: 1400px;
+            width: 315px;
+            border: 1px solid rgb(249, 238, 193);
+            background-color: rgb(252, 245, 217);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            padding: 10px;
+            color: gray;
+            font-weight: bold;
+            height: 20px;
+        }
+        .fea_1{
+            display: flex;
+            align-items: center;
+            margin-left: 1400px;
+            margin-top: 0px;
+            width: 335px;
+            background-color: rgb(253, 250, 236);
+            border-left: 1px solid rgb(249, 238, 193);
+            border-right: 1px solid rgb(249, 238, 193);
+        }
+        .fea_1 span{
+            padding-left: 10px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+        }
+        .fea_2{
+            display: flex;
+            align-items: center;
+            margin-left: 1400px;
+            margin-top: 0px;
+            width: 335px;
+            background-color: rgb(253, 250, 236);
+            border-left: 1px solid rgb(249, 238, 193);
+            border-right: 1px solid rgb(249, 238, 193);
+            border-bottom: 1px solid rgb(249, 238, 193);
+          
+        }
+        .fea_2 span{
+            padding-left: 10px;
+            padding-top: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+        }
+        .right_low{
+            display: flex;
+            flex-direction: column;
+            margin-left: 1400px;
+            width: 335px;
+            border: 1px solid lightgray;
+            margin-top: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            color: gray;
+            padding-top: 10px;
+            background-color: rgb(236, 236, 236);
+            box-shadow: 0px 1px 10px lightgray;
+
+
+        }
+        .right_low .l1{
+            padding-left: 5px;
+            padding-bottom: 10px;
+        }
+        .right_low .l1 + hr{
+            opacity: .5;
+        }
+        .right_low .l2{
+            background-color: white;
+            padding: 10px;
+            font-size: 14px;
+
+        }
+        .right_low .l3{
+            background-color: white;
+            padding-top: 5px;
+            padding-left: 10px;
+            font-size: 12px;
+        }
+        .right_low .l3 span{
+            color: rgb(187, 186, 186);
+        }
+        .right_low .icon{
+            background-color: white;
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .right_low .l4{
+            background-color: white;
+            padding-left: 10px;
+            font-size: 14px;
+            color: gray;
+        }
+        .right_low .l5{
+            background-color: white;
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 12px;
+        }
+        .right_low .l5 span{
+            color: rgb(187, 186, 186);
+        }
+        
+    </style>
+    <body>
+        <div class="top">
+            <div class="logo">
+                <img src="logo.png">
+                <span>stack <strong>overflow</strong></span>
+            </div>
+
+            <div class="mid">
+                <span>About</span>
+                <span>Products</span>
+                <span>For Teams</span>
+            </div>
+            
+            <div class="search">
+                <img src="search.png">
+                <span>Search...</span>
+                
+            </div>
+            <div class="login">
+                Log in
+            </div>
+            <div class="signup">
+                Sign up
+            </div>
+        </div>
+
+        <div class="left">
+            <div class="first">Home</div>
+            <div class="first">PUBLIC</div>
+            <div class="ques">
+                <img src="ques.png">
+                <span>Questions</span>
+            </div>
+            <div class="sec">Tags</div>
+            <div class="sec">Users</div>
+            <div class="first" id="col">
+                <span>Collectives</span>
+                <img src="collective.png">
+            </div>
+            <div class="star">
+                <img src="star.png">
+                <span>Explore Collectives</span>
+            </div>
+            <div class="first">FIND A JOB</div>
+            <div class="sec">Jobs</div>
+            <div class="sec">Companies</div>
+            <div class="first">TEAMS</div>
+            <div class="last">
+                <p><span>Stack Overflow for Teams</span> - Collaborate and share knowledge with a private group</p>
+                <img src="pic_1.png" width="90%">
+                <div id="last">
+                    Create a free team
+                </div>
+                <div id="last_last">
+                    What is Teams?
+                </div>
+            </div>          
+        </div>
+
+        <div class="top_mid">
+            <h1>How to use Flexbox?</h1>
+            <div class="qs">Ask Question</div>          
+        </div>
+
+        <div class="m_mid">
+            <div><span>Asked</span> 4 years, 5 months ago</div>
+            <div><span class="bb">Active</span> 3 years, 5 months ago</div>
+            <div><span class="bb">Viewed</span> 777times</div>
+        </div>
+        <hr>
+
+        <div class="mid_left">
+            <img src="mid_left.png">
+
+        </div>
+        <div class="mid_m">
+            <div>I have a layout like this:</div>
+
+        </div>
+
+        <div class="mid_l">
+            <div>&lt;<span class="d">div</span> <span class="v">class</span>=<span class="data">"outer"</span>&gt;</div>
+            <div class="c20">&lt;<span class="d">div</span> <span class="v">class</span>=<span class="data">"inner"</span>&gt;&lt;<span class="d">/div</span>&gt;</div>
+            <div class="c20">&lt;<span class="d">div</span> <span class="v">class</span>=<span class="data">"inner"</span>&gt;&lt;<span class="d">/div</span>&gt;</div>
+            <div class="c20">&lt;<span class="d">div</span> <span class="v">class</span>=<span class="data">"inner"</span>&gt;</div>
+            <div class="c40">&lt;<span class="d">div</span> <span class="v">class</span>=<span class="data">"deeper"</span>&gt;</div>
+            <div class="c60">&lt;<span class="d">div</span> <span class="v">class</span>=<span class="data">"newLineContent"</span>&gt;&lt;<span class="d">/div</span>&gt;</div>
+            <div class="c60">&lt;<span class="d">div</span> <span class="v">class</span>=<span class="data">"newLineContent"</span>&gt;&lt;<span class="d">/div</span>&gt;</div>
+            <div class="c60">&lt;<span class="d">div</span> <span class="v">class</span>=<span class="data">"newLineContent"</span>&gt;&lt;<span class="d">/div</span>&gt;</div>
+            <div class="c40">&lt;<span class="d">/div</span>&gt;</div>
+            <div class="c20">&lt;<span class="d">/div</span>&gt;</div>
+            <div>&lt;<span class="d">/div</span>&gt;</div>
+        </div>
+        <div class="mid_last">
+            <p>
+                I have to align the <span class="dd">div</span>s like: All the <span class="dd">div</span>s with "outer" class has to start from new line and all <span class="dd">div</span>s with "inner" class has to be in the same line within "outer" <span class="dd">div</span> and the <span class="dd">div</span>s with deeper class inside "outer" <span class="dd">div</span> should start from new line and the "newLineContent" <span class="dd">div</span>s has to be in the same line within "deeper" <span class="dd">div</span>s
+            </p><br>
+            <p>
+                How can I achieve this using flexbox? or is there any other way to achieve it?
+            </p>
+        </div>
+
+        <div class="right">
+            <div>The Overflow Blog</div>
+            
+
+        </div>
+
+        <div class="tic_1">
+            <img src="tic.png">
+            <div>Introducing Content Health, a new way to keep the knowledge base up-to-date</div>
+        </div>
+        <div class="tic_2">
+            <img src="tic.png">
+            <div>Podcast 394: what if you could invest in your favourite developer?</div>
+
+        </div>
+
+        <div class="fea">
+            <div>Featured on Meta</div>
+        </div>
+        <div class="fea_1">
+            <img src="sign.png">
+            <span>Now Live: A fully responsive profile</span>
+
+        </div>
+        <div class="fea_2">
+            <img src="sign.png">
+            <span>Reducing the weight of oue footer</span>
+
+        </div>
+        <div class="right_low">
+            <div class="l1">
+                34 people chatting
+            </div>
+            <hr>
+
+            <div class="l2">
+                <span>Tamil iOS, Web and Phonegap Developers</span>
+            </div>
+            <div class="l3">
+                <span>8 hours ago -</span> jafarbtech
+            </div>
+            <div class="icon">
+                <img src="icon.png">
+            </div>
+            <div class="l4">
+                HTML / CSS / WebDesign
+            </div>
+            <div class="l5">
+                <span>2 days ago -</span> Rana
+            </div>
+
+
+        </div>
+    </body>
+</html>
